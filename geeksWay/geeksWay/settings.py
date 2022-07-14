@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+from decouple import config
 
 from pathlib import Path
 
@@ -20,9 +21,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-us(!+0p2)s0!ohz@y8h%qu)b&h*2ip95u-04ht%)bfo@a%++ly'
-
 # SECURITY WARNING: don't run with debug turned on in production!
+SECRET_KEY = config("SECRET_KEY")
+
 DEBUG = True
 
 ALLOWED_HOSTS = []
