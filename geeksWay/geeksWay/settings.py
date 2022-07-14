@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'graphql_auth',
 
     'users',
+    'notes',
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'

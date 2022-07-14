@@ -1,7 +1,17 @@
 import graphene
-
+from graphene_django import DjangoObjectType
 from graphql_auth.schema import UserQuery, MeQuery
 from graphql_auth import relay
+
+from users.models import CustomUser
+
+class UserInput(graphene.InputObjectType):
+   id = graphene.ID()
+   username = graphene.String()
+   email = graphene.String()
+   first_name = graphene.String()
+   last_name = graphene.String()
+
 
 class AuthMutation(graphene.ObjectType):
    register = relay.Register.Field()
